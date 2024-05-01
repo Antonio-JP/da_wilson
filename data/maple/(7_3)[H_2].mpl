@@ -1,0 +1,1 @@
+-45/7*u_2(t)*diff(u_2(t), t$4) + 30/7*u_2(t)*diff(u_3(t), t$3) - 3/7*u_2(t)*diff(u_5(t), t$1) + 6/7*diff(u_2(t), t$1)*u_5(t) - 9/7*diff(u_2(t), t$2)*u_4(t) - 24/7*diff(u_2(t), t$3)*u_3(t) - 15*diff(u_2(t), t$6) + 18/7*u_3(t)*diff(u_3(t), t$2) + 9/7*diff(u_3(t), t$1)*u_4(t) + 9*diff(u_3(t), t$5) - diff(u_5(t), t$3) - 3*diff(u_6(t), t$2) - 3*diff(u_7(t), t$1)

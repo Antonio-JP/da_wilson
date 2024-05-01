@@ -1,0 +1,1 @@
+5/9*u_2(t)*diff(u_2(t), t$3) + 5/9*u_2(t)^2*diff(u_2(t), t$1) + 5/9*diff(u_2(t), t$1)*diff(u_2(t), t$2) + 5/3*diff(u_2(t), t$1)*diff(u_3(t), t$1) + 5/3*diff(u_2(t), t$2)*u_3(t) + 1/9*diff(u_2(t), t$5) - 10/3*u_3(t)*diff(u_3(t), t$1)
