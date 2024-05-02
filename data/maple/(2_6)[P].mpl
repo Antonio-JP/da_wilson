@@ -1,0 +1,1 @@
+3*u(t)*diff(u(t), t$2) + u(t)^3 + 2*diff(u(t), t$1)^2 + diff(u(t), t$4)+(6*u(t)*diff(u(t), t$1) + 4*diff(u(t), t$3))*D+(3*u(t)^2 + 7*diff(u(t), t$2))*D^2+(6*diff(u(t), t$1))*D^3+(3*u(t))*D^4+(0)*D^5+D^6

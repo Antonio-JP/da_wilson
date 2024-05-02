@@ -1,0 +1,1 @@
+-35/8*u(t)*diff(u(t), t$1)*diff(u(t), t$2) - 7/32*u(t)*diff(u(t), t$5) - 35/32*u(t)^2*diff(u(t), t$3) - 35/16*u(t)^3*diff(u(t), t$1) - 21/32*diff(u(t), t$1)*diff(u(t), t$4) - 35/32*diff(u(t), t$1)^3 - 35/32*diff(u(t), t$2)*diff(u(t), t$3) - 1/64*diff(u(t), t$7)
