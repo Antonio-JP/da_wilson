@@ -25,7 +25,7 @@ def generate_maple(P, file_path):
 
 def generate_mathematica(P, file_path):
     r'''Creates the Mathematica representation of the polynomials and stores it in a given file_path'''
-    print_in_file(P._mathematica_("z", "t", "D"), file_path)
+    print_in_file(P._mathematica_("z", "t", "DD"), file_path)
 
 if __name__ == "__main__":
     PAD_SIZE = os.get_terminal_size()[0]
