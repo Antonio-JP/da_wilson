@@ -22,12 +22,10 @@ def generate_latex(P, file_path):
 def generate_maple(P, file_path):
     r'''Creates the Maple representation of the polynomials and stores it in a given file_path'''
     print_in_file(P._maple_("z", "t", "D"), file_path)
-    pass
 
 def generate_mathematica(P, file_path):
     r'''Creates the Mathematica representation of the polynomials and stores it in a given file_path'''
-    print("!!! Mathematica is not yet implemented")
-    pass
+    print_in_file(P._mathematica_("z", "t", "DD"), file_path)
 
 if __name__ == "__main__":
     PAD_SIZE = os.get_terminal_size()[0]
