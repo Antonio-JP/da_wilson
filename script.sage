@@ -1,7 +1,8 @@
-from dalgebra.commutators import *
+#from dalgebra.commutators import *
 
 import os
 import pickle
+import argparse
 
 def load_file(file_path):
     r'''Load an .out file to get the polynomials represented'''
@@ -28,6 +29,17 @@ def generate_mathematica(P, file_path):
     print_in_file(P._mathematica_("z", "t", "DD"), file_path)
 
 if __name__ == "__main__":
+    ## Reading possible argument with folder for `dalgebra`
+    parser = argparse.ArgumentParser(description="Generate TeX Maple and Mathematica files from operators")
+    parser.add_argument("-dalgebra", type=str, help="(Optional) Folder to look for 'dalgebra'.")
+
+    args = parser.parse_args()
+    if args.dalgebra is not None:
+        sys.path.insert(0, args.dalgebra) # dalgebra will be here
+    
+    # Importing dalgebra
+    from dalgebra.commutators import *
+   
     PAD_SIZE = os.get_terminal_size()[0]
     print("".ljust(PAD_SIZE, "#"))
     print("### GENERATING FILES FROM SAGEMATH FORMAT  ".ljust(PAD_SIZE, "#"))
