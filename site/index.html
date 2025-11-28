@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Almost Commuting Operators — Viewer</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- MathJax configuration: enable automatic line breaking within container width -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      options: {
+        skipHtmlTags: ['script','style','textarea','pre']
+      },
+      output: {
+        displayOverflow: 'linebreak',  // break long lines
+        linebreaks: {                  // options for when overflow is linebreak
+          inline: true,                   // true for browser-based breaking of in-line equations
+          width: '100%',                  // a fixed size or a percentage of the container width
+          lineleading: .2,                // the default lineleading in em units
+          LinebreakVisitor: null,         // The LinebreakVisitor to use
+        }
+      }
+      // chtml: {
+      //   displayAlign: 'left',
+      //   displayIndent: '0em',
+      //   linebreaks: { automatic: true, width: 'container' }
+      // },
+      // svg: {
+      //   linebreaks: { automatic: true, width: 'container' }
+      // }
+    };
+  </script>
+  <!-- MathJax -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+  <!-- JSZip -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+  <div id="app" class="container">
+    <aside id="sidebar" class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <h1>Almost Commuting</h1>
+        <p class="muted">Repository viewer — LaTeX / Maple / Mathematica / Sage</p>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <button id="home-show" class="btn">Home</button>
+        <button id="viewer-show" class="btn">Viewer</button>
+        <button id="download-show" class="btn">Download</button>
+      </nav>
+      <div class="sidebar-footer">
+        <label class="small">Theme</label>
+        <div class="toggle-row">
+          <button id="themeToggle" class="btn small">Dark</button>
+        </div>
+        <button id="collapseSidebar" class="btn small ghost ifsmall" aria-controls="sidebar" aria-expanded="false">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main" role="main">
+      <header class="topbar">
+        <div>
+          <button id="expandSidebar" class="btn small ghost ifsmall" aria-controls="sidebar" aria-expanded="false">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <button id="loadBtn" class="btn"><strong>Load</strong></button>
+        </div>
+      </header>
+
+      <section id="home" class="section">
+        <h2>About this site</h2>
+        <p>This site presents the almost-commuting differential operator basis stored in this repository. Files are stored under <code>data/latex/</code>, <code>data/maple/</code>, <code>data/mathematica/</code>, and <code>data/sage/</code>. Use the Viewer to inspect LaTeX sources rendered with MathJax. Use Download to package files into ZIP archives.</p>
+      </section>
+
+      <section id="viewer" class="section hidden">
+        <h2>Viewer</h2>
+        <div class="controls">
+          <div class="search">
+            <input id="searchInput" placeholder="search filenames or latex content" />
+          </div>
+        </div>
+
+        <div class="viewer-grid">
+          <div id="filesdiv" class="file-list card h70-scroll">
+            <h3>Files</h3>
+              <ul id="fileList" role="listbox" tabindex="0" aria-label="Available files"></ul>
+          </div>
+
+            <div id="previewdiv" class="file-preview card h70-scroll">
+            <h3>Preview</h3>
+            <div id="previewArea" class="preview" aria-live="polite"></div>
+            <div id="spinner" class="spinner" role="status" aria-live="polite" aria-hidden="true" title="Loading"> 
+              <svg viewBox="0 0 50 50" class="spinner-svg" aria-hidden="true">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+              </svg>
+              <span class="sr-only">Rendering math…</span>
+            </div>
+            <div class="preview-actions">
+              <a id="rawLink" class="btn ghost" target="_blank">Open Raw</a>
+              <button id="downloadFileBtn" class="btn">Download File</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="section hidden">
+        <h2>Download</h2>
+        <p>Select filters (n, m, j) and click <strong>Package ZIP</strong> to download matching files. Sage files (one per n,m) will be included automatically if present.</p>
+        <div class="download-controls">
+          <label><input type="checkbox" id="includeLatex" checked /> LaTeX</label>
+          <label><input type="checkbox" id="includeMaple" checked /> Maple</label>
+          <label><input type="checkbox" id="includeMathematica" checked /> Mathematica</label>
+          <label><input type="checkbox" id="includeSage" checked /> Sage</label>
+          <button id="packageBtn" class="btn primary">Package ZIP</button>
+        </div>
+        <div id="downloadStatus" class="muted small"></div>
+      </section>
+
+      <section id="sec-filters" class="hidden">
+        <div class="filters">
+            <label>N: <select id="nFilter"><option value="">—</option></select></label>
+            <label>M: <select id="mFilter"><option value="">—</option></select></label>
+            <label>J: <select id="jFilter"><option value="">—</option></select></label>
+            <label>Type: <select id="typeFilter"><option value="all">All</option><option value="P">P</option><option value="H">H</option></select></label>
+            <button id="applyFilters" class="btn">Apply</button>
+          </div>
+      </section>
+
+      <footer class="footer small muted">Built for GitHub Pages. Files are fetched from the repository via the GitHub REST API.</footer>
+    </main>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

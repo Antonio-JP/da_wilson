@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Almost Commuting favicon">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b5fff"/>
+      <stop offset="100%" stop-color="#59a7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="32" fill="url(#g)" />
+  <g transform="translate(32,32) scale(0.75)" fill="#fff" font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <text x="96" y="92" font-size="72" font-weight="700">AC</text>
+    <text x="96" y="150" font-size="22" font-weight="500">L-ODO</text>
+  </g>
+</svg>
