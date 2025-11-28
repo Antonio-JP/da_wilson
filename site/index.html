@@ -44,17 +44,16 @@
     <aside id="sidebar" class="sidebar" role="navigation" aria-label="Main navigation">
       <div class="brand">
         <h1>Almost Commuting</h1>
-        <p class="muted">Repository viewer — LaTeX / Maple / Mathematica / Sage</p>
+        <p class="muted">Repository viewer</p>
       </div>
       <nav class="nav" aria-label="Sections">
-        <button id="home-show" class="btn">Home</button>
-        <button id="viewer-show" class="btn">Viewer</button>
-        <button id="download-show" class="btn">Download</button>
+        <button id="home-show" class="btn btn-sidebar">Home</button>
+        <button id="viewer-show" class="btn btn-sidebar">Viewer</button>
+        <button id="download-show" class="btn btn-sidebar">Download</button>
       </nav>
       <div class="sidebar-footer">
-        <label class="small">Theme</label>
         <div class="toggle-row">
-          <button id="themeToggle" class="btn small">Dark</button>
+          <button id="themeToggle" class="btn small"><img src="assets/images/sun-moon.svg" alt="Dark"></button>
         </div>
         <button id="collapseSidebar" class="btn small ghost ifsmall" aria-controls="sidebar" aria-expanded="false">
             <div class="bar"></div>
@@ -76,9 +75,34 @@
         </div>
       </header>
 
+      <h1>Almost Commuting Differential Operators Database</h1>
       <section id="home" class="section">
-        <h2>About this site</h2>
-        <p>This site presents the almost-commuting differential operator basis stored in this repository. Files are stored under <code>data/latex/</code>, <code>data/maple/</code>, <code>data/mathematica/</code>, and <code>data/sage/</code>. Use the Viewer to inspect LaTeX sources rendered with MathJax. Use Download to package files into ZIP archives.</p>
+        <h2>What is an almost commuting differential operator?</h2>
+        <p>Let $L$ be a linear ordinary differential operator (ODO) with the following shape:</p>
+        \[L = \partial^n + u_2\partial^{n-2} + u_3\partial^{n-3} + \ldots + u_n,\]
+        <p>where the coefficients $u_2,\ldots,u_n$ are differential variables (can be seen as functions in a variable $x$ such that $\partial(x) = 1$).</p>
+
+        <p class="TODO">Add definition for almost commuting operators.</p>
+
+        <p class="TODO">Add basic properties for almost commuting operators (with references)</p>
+
+        <h3>Some considerations</h3>
+        
+        <p class="TODO">Add the considerations, such as normal form or monic operators.</p>
+
+        <h2>Wilson's almost commuting basis</h2>
+        <p class="TODO">Describe Wilson's homogeneous basis and how can it be computed.</p>
+
+        <h2>What does this website offer?</h2>
+        <p>This site presents Wilson's almost-commuting differential operator basis stored in this repository. Files are stored under <code>data/latex/</code>, <code>data/maple/</code>, <code>data/mathematica/</code>, and <code>data/sage/</code>.</p>
+        
+        <p>You can use the Viewer to inspect LaTeX sources online or use Download to package files into ZIP archives in the desired format</p>
+
+        <p><strong>REMEMBER:</strong> Click the button "Load" on the top to fetch the data from the repository</p>
+
+        <h2>Some references</h2>
+        <p class="TODO">Add bibliography.</p>
+        
       </section>
 
       <section id="viewer" class="section hidden">
