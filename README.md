@@ -28,3 +28,5 @@ TO BE DONE
 
 ## *4. How to expand the repository?*
 TO BE DONE
+
+Recall to run the script to generate the index of files.
