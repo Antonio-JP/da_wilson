@@ -232,6 +232,9 @@ async function loadRepository(){
     populateFilters()
     showFileList(Object.values(state.index.byKey).flat().map(x=>x))
     el('downloadStatus').textContent = `Loaded ${state.files.length} files.`
+
+    // Hide the "recall" paragraph after loading
+    for (const p of document.getElementsByClassName("recall")) p.style.display = "none";
   }catch(e){ alert('Error loading repository: '+e.message); console.error(e) }
 }
 
